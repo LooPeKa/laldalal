@@ -1,4 +1,4 @@
-# coding: unicode-escape
+# coding: utf-8
 from vkbottle import Bot, Message
 import vk_api
 from vkbottle.keyboard import Keyboard, Text 
