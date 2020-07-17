@@ -1,4 +1,4 @@
-# coding: unicode
+# coding: unicode-escape
 from vkbottle import Bot, Message
 import vk_api
 from vkbottle.keyboard import Keyboard, Text 
@@ -67,9 +67,7 @@ async def yes( ans: Message, text ):
 			if ans.from_id in logic:
 				if logic[ ans.from_id ] != '':
 					if logic[ ans.from_id ] == 'sale':
-						await ans( f'💵 К оплате - { int( int( text ) * course_sale ) / 100000000 }₽
-                        ❗Для оплаты перейдите по ссылке https://vk.cc/ax2ngA и укажите комментарий -> ( ans.from_id )
-                        ❗Или произведите оплату с QIWI по этому номеру: ' + str( config.phone ) + ' и укажите комментарий -> ( ans.from_id )' )
+						await ans( f'💵 К оплате - { int( int( text ) * course_sale ) / 100000000 }₽\n❗Для оплаты перейдите по ссылке https://vk.cc/ax2ngA и укажите комментарий -> ( ans.from_id )\n❗Или произведите оплату с QIWI по этому номеру: ' + str( config.phone ) + ' и укажите комментарий -> ( ans.from_id )' )
 						logic [ ans.from_id ] = ''
 						po [ ans.from_id ] = text
 						op [ ans.from_id ] = int( int( text ) * course_sale ) / 100000000
